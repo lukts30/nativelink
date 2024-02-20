@@ -41,7 +41,7 @@ pub const ESTIMATED_DIGEST_SIZE: usize = 2048;
 const MAX_ACTION_MSG_SIZE: usize = 10 << 20; // 10mb.
 
 /// Default read buffer size for reading from an AsyncReader.
-const DEFAULT_READ_BUFF_SIZE: usize = 4096;
+const DEFAULT_READ_BUFF_SIZE: usize = 1 << 20; // 10mb.
 
 /// Attempts to fetch the digest contents from a store into the associated proto.
 pub async fn get_and_decode_digest<T: Message + Default>(
